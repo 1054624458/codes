@@ -1,0 +1,30 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane fx:controller="mysql.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <Label text="数据库地址" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="url" text="Jdbc:mysql://localhost:3306/mysite?characterEncoding=utf-8" GridPane.columnIndex="1"
+               GridPane.rowIndex="0"/>
+    <TextField fx:id="user" text="root" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="password" text="密码" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="包名" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField fx:id="packages" text="com" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Button text="选择pojo生成路径" GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#choosePojoDir"/>
+    <TextField fx:id="pojoPath" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Button text="选择mapperJava生成路径" GridPane.columnIndex="0" GridPane.rowIndex="4" onAction="#chooseMapperJavaDir"/>
+    <TextField fx:id="mapperJavaPath" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Button text="选择mapperXml生成路径" GridPane.columnIndex="0" GridPane.rowIndex="5" onAction="#chooseMapperXmlDir"/>
+    <TextField fx:id="mapperXmlPath" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <Button text="选择service生成路径" GridPane.columnIndex="0" GridPane.rowIndex="6" onAction="#chooseServiceDir"/>
+    <TextField fx:id="servicePath" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <Button text="选择controller生成路径" GridPane.columnIndex="0" GridPane.rowIndex="7" onAction="#chooseControllerDir"/>
+    <TextField fx:id="controllerPath" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+    <Button id="create" text="生成代码" GridPane.columnIndex="1" GridPane.rowIndex="8" onAction="#write"/>
+</GridPane>

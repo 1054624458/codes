@@ -1,0 +1,47 @@
+package ${other.getPackages()}.controller;
+
+import com.base.ServiceContain;
+import ${other.getPackages()}.pojo.${other.getTableName()?cap_first};
+import com.pojo.other.SiteResponse;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+
+/**
+ * Created on ${other.getTime()}.
+ */
+
+@Controller
+@RequestMapping("/api/${other.getTableName()}")
+public class ${other.getTableName()?cap_first}Controller extends ServiceContain{
+
+    //添加
+    @RequestMapping("/insert")
+    @ResponseBody
+    public SiteResponse insert(@RequestBody ${other.getTableName()?cap_first} ${other.getTableName()}) {
+        return ${other.getTableName()}Service.insert(${other.getTableName()});
+    }
+
+    //删除
+    @RequestMapping("/delete")
+    @ResponseBody
+    public SiteResponse delete(@RequestBody Long[] ids) {
+        return ${other.getTableName()}Service.deleteById(ids);
+    }
+
+    //编辑
+    @RequestMapping("/update")
+    @ResponseBody
+    public SiteResponse update(@RequestBody ${other.getTableName()?cap_first} ${other.getTableName()}) {
+        return ${other.getTableName()}Service.update(${other.getTableName()});
+    }
+
+    //查询
+    @RequestMapping("/search")
+    @ResponseBody
+    public SiteResponse search(@RequestBody ${other.getTableName()?cap_first} ${other.getTableName()}) {
+        return ${other.getTableName()}Service.search(${other.getTableName()});
+    }
+}
